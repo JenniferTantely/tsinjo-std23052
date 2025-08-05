@@ -1,25 +1,25 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
-import lombok.*;
 import java.time.LocalDateTime;
+import lombok.*;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Help {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private Double amount;
-    private String description;
-    private LocalDateTime date;
+  private Double amount;
+  private String description;
+  private LocalDateTime date;
 
-    @ManyToOne
-    private Beneficiary beneficiary;
+  @ManyToOne private Beneficiary beneficiary;
 
-    @OneToOne
-    private Payment payment;
+  @OneToOne private Payment payment;
 }

@@ -2,10 +2,11 @@ package com.example.demo.DTO;
 
 import lombok.*;
 
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApplicationDTO {
-    private String name;
-    private String apiKey;
+  private String name;
+  private String apiKey;
 }

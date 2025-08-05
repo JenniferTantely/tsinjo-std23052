@@ -4,21 +4,22 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Payment {
-    @Id
-    private String id;
+  @Id private String id;
 
-    private Double amount;
+  private Double amount;
 
-    @Enumerated(EnumType.STRING)
-    private Status status;
+  @Enumerated(EnumType.STRING)
+  private Status status;
 
-    public enum Status {
-        VERIFYING,
-        SUCCEEDED,
-        FAILED
-    }
+  public enum Status {
+    VERIFYING,
+    SUCCEEDED,
+    FAILED
+  }
 }
