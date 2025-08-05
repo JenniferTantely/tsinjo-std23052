@@ -18,6 +18,12 @@ public class Payment {
   @Enumerated(EnumType.STRING)
   private Status status;
 
+  @Column(name = "payer_email")
+  private String payerEmail;
+
+  @Column(name = "psp_type")
+  private String pspType;
+
   public enum Status {
     VERIFYING,
     SUCCEEDED,
