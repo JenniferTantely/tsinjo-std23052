@@ -3,6 +3,8 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @Setter
@@ -12,7 +14,7 @@ import lombok.*;
 public class Payment {
   @Id private String id;
 
-  private Double amount;
+  private BigDecimal amount;
 
   @Enumerated(EnumType.STRING)
   private Status status;

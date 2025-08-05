@@ -1,11 +1,11 @@
 CREATE TABLE donor (
-                       id SERIAL PRIMARY KEY,
+                       id BIGSERIAL PRIMARY KEY,
                        full_name VARCHAR(255) NOT NULL,
                        email VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE beneficiary (
-                             id SERIAL PRIMARY KEY,
+                             id BIGSERIAL PRIMARY KEY,
                              full_name VARCHAR(255) NOT NULL,
                              email VARCHAR(255) NOT NULL UNIQUE
 );
@@ -19,18 +19,18 @@ CREATE TABLE payment (
 );
 
 CREATE TABLE donation (
-                          id SERIAL PRIMARY KEY,
+                          id BIGSERIAL PRIMARY KEY,
                           amount NUMERIC(10,2) NOT NULL,
                           date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                          donor_id INT NOT NULL REFERENCES donor(id),
+                          donor_id BIGINT NOT NULL REFERENCES donor(id),
                           payment_id VARCHAR(255) REFERENCES payment(id)
 );
 
 CREATE TABLE help (
-                      id SERIAL PRIMARY KEY,
+                      id BIGSERIAL PRIMARY KEY,
                       amount NUMERIC(10,2) NOT NULL,
                       description TEXT,
                       date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                      beneficiary_id INT NOT NULL REFERENCES beneficiary(id),
+                      beneficiary_id BIGINT NOT NULL REFERENCES beneficiary(id),
                       payment_id VARCHAR(255) REFERENCES payment(id)
 );
