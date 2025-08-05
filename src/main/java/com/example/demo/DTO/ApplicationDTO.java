@@ -9,5 +9,4 @@ import lombok.*;
 public class ApplicationDTO {
   private String name;
   private String apiKey;
-
 }
